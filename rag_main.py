@@ -7,7 +7,8 @@ from pypdf import PdfReader
 import google.generativeai as genai
 
 # Configuring Gemini API
-genai.configure(api_key='AIzaSyClRjxewRDN8gqhwkMzCMyUutGBVZEyI8g')
+genai_API_KEY = st.secrets["genai_API"]
+genai.configure(api_key=genai_API_KEY)
 
 emb_model = 'models/text-embedding-004'
 model = genai.GenerativeModel('gemini-1.5-pro-latest')
